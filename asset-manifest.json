@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/portafolio-react/static/css/main.8a685450.css",
-    "main.js": "/portafolio-react/static/js/main.cdf07c1d.js",
-    "static/media/Departamento-de-Informtica_HORIZONTAL.png": "/portafolio-react/static/media/Departamento-de-Informtica_HORIZONTAL.9299f7109638bcb0c13c.png",
-    "static/media/icons8-react.svg": "/portafolio-react/static/media/icons8-react.9342c38419495e33d129b6e97166cd00.svg",
-    "static/media/javascript-js.svg": "/portafolio-react/static/media/javascript-js.63b93412a24001eff2acc22e0cb40276.svg",
-    "static/media/icons8-react-native.svg": "/portafolio-react/static/media/icons8-react-native.a060cbe85e50deda1d61452cee9de5b2.svg",
-    "static/media/icons8-python.svg": "/portafolio-react/static/media/icons8-python.026a62687ef705a39cfc755d7457859c.svg",
-    "static/media/icons8-django.svg": "/portafolio-react/static/media/icons8-django.3392d55145172e06f2810bce0afcbb2a.svg",
-    "index.html": "/portafolio-react/index.html",
-    "static/media/icons8-git.svg": "/portafolio-react/static/media/icons8-git.43d387b77657117c0e407816cbf72476.svg",
-    "static/media/icons8-html.svg": "/portafolio-react/static/media/icons8-html.4a671be7516e9415f1e8bf81e6df4c0a.svg",
-    "static/media/icons8-css.svg": "/portafolio-react/static/media/icons8-css.3ec320225ef851ed26cf9fd1c6ebaa54.svg",
-    "main.8a685450.css.map": "/portafolio-react/static/css/main.8a685450.css.map",
-    "main.cdf07c1d.js.map": "/portafolio-react/static/js/main.cdf07c1d.js.map"
+    "main.css": "./static/css/main.8a685450.css",
+    "main.js": "./static/js/main.f7e81364.js",
+    "static/media/Departamento-de-Informtica_HORIZONTAL.png": "./static/media/Departamento-de-Informtica_HORIZONTAL.9299f7109638bcb0c13c.png",
+    "static/media/icons8-react.svg": "./static/media/icons8-react.9342c38419495e33d129b6e97166cd00.svg",
+    "static/media/javascript-js.svg": "./static/media/javascript-js.63b93412a24001eff2acc22e0cb40276.svg",
+    "static/media/icons8-react-native.svg": "./static/media/icons8-react-native.a060cbe85e50deda1d61452cee9de5b2.svg",
+    "static/media/icons8-python.svg": "./static/media/icons8-python.026a62687ef705a39cfc755d7457859c.svg",
+    "static/media/icons8-django.svg": "./static/media/icons8-django.3392d55145172e06f2810bce0afcbb2a.svg",
+    "static/media/icons8-git.svg": "./static/media/icons8-git.43d387b77657117c0e407816cbf72476.svg",
+    "index.html": "./index.html",
+    "static/media/icons8-html.svg": "./static/media/icons8-html.4a671be7516e9415f1e8bf81e6df4c0a.svg",
+    "static/media/icons8-css.svg": "./static/media/icons8-css.3ec320225ef851ed26cf9fd1c6ebaa54.svg",
+    "main.8a685450.css.map": "./static/css/main.8a685450.css.map",
+    "main.f7e81364.js.map": "./static/js/main.f7e81364.js.map"
   },
   "entrypoints": [
     "static/css/main.8a685450.css",
-    "static/js/main.cdf07c1d.js"
+    "static/js/main.f7e81364.js"
   ]
 }
