@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route, HashRouter } from "react-router-dom";
 
 import { NoPage } from "./components";
 import "./index.css";
@@ -10,14 +10,14 @@ import Mobile from "./mobile/Mobile";
 
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
         <Route path="/" element={<Overview />} />
         <Route path="web" element={<Web />} />
         <Route path="mobile" element={<Mobile />} />
         <Route path="*" element={<NoPage />} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
