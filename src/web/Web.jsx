@@ -1,97 +1,55 @@
-import React from "react";
-import { Layout } from "../components";
-import { Table } from "antd";
+import React, { useEffect, useState } from "react";
+import { Card, Col, Row, Table, Typography } from "antd";
+import { getMessages } from "../api/messages";
+
+const { Title, Paragraph } = Typography;
 
 export default function Web() {
+  const [data, setData] = useState([]);
   const columns = [
     {
-      title: "Name",
-      dataIndex: "name",
-      filters: [
-        {
-          text: "Joe",
-          value: "Joe",
-        },
-        {
-          text: "Jim",
-          value: "Jim",
-        },
-        {
-          text: "Submenu",
-          value: "Submenu",
-          children: [
-            {
-              text: "Green",
-              value: "Green",
-            },
-            {
-              text: "Black",
-              value: "Black",
-            },
-          ],
-        },
-      ],
-      // specify the condition of filtering result
-      // here is that finding the name started with `value`
-      onFilter: (value, record) => record.name.indexOf(value) === 0,
-      sorter: (a, b) => a.name.length - b.name.length,
-      sortDirections: ["descend"],
+      title: "Creador",
+      dataIndex: "sender",
     },
     {
-      title: "Age",
-      dataIndex: "age",
-      defaultSortOrder: "descend",
-      sorter: (a, b) => a.age - b.age,
+      title: "Asunto",
+      dataIndex: "subject",
     },
     {
-      title: "Address",
-      dataIndex: "address",
-      filters: [
-        {
-          text: "London",
-          value: "London",
-        },
-        {
-          text: "New York",
-          value: "New York",
-        },
-      ],
-      onFilter: (value, record) => record.address.indexOf(value) === 0,
+      title: "Acciones",
+      dataIndex: "actions",
     },
   ];
-  const data = [
-    {
-      key: "1",
-      name: "John Brown",
-      age: 32,
-      address: "New York No. 1 Lake Park",
-    },
-    {
-      key: "2",
-      name: "Jim Green",
-      age: 42,
-      address: "London No. 1 Lake Park",
-    },
-    {
-      key: "3",
-      name: "Joe Black",
-      age: 32,
-      address: "Sydney No. 1 Lake Park",
-    },
-    {
-      key: "4",
-      name: "Jim Red",
-      age: 32,
-      address: "London No. 2 Lake Park",
-    },
-  ];
-  const onChange = (pagination, filters, sorter, extra) => {
-    console.log("params", pagination, filters, sorter, extra);
-  };
+  useEffect(() => {
+    getMessages()
+      .then(({ data }) => {
+        setData(data);
+      })
+      .catch((error) => console.log(error));
+  }, []);
+
   return (
-    <Layout>
-      <div>Web</div>
-      <Table columns={columns} dataSource={data} onChange={onChange} />;
-    </Layout>
+    <div style={{ margin: 20 }}>
+      <Card>
+        <Title>Conocimientos básicos</Title>
+        <Row gutter={[20, 20]}>
+          <Col span={12}>
+            <Paragraph>
+              Uno de los conocimientos más utilizados en el desarrollo de
+              software es la creación de un CRUD. A Continuación es posible ver
+              una Tabla en la cual se pueden agregar, leer, eliminar y editar
+              datos.
+            </Paragraph>
+          </Col>
+          <Col span={12}>
+            <Table
+              columns={columns}
+              dataSource={data}
+              rowKey={(record) => record.id}
+            />
+          </Col>
+        </Row>
+      </Card>
+    </div>
   );
 }

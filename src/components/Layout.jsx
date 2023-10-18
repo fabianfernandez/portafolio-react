@@ -1,18 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import { Layout as DefaultLayout, Menu, theme } from "antd";
 import { Link } from "react-router-dom";
 const { Header, Content, Footer } = DefaultLayout;
 
 const ITEMS = [
-  { key: 1, label: <Link to="/">Resumen</Link> },
-  { key: 2, label: <Link to="/web">Desarrollo web</Link> },
-  { key: 3, label: <Link to="/mobile">Desarrollo móvil</Link> },
+  { key: "overview", label: <Link to="/">Resumen</Link> },
+  { key: "web", label: <Link to="/web">Desarrollo web</Link> },
+  { key: "mobile", label: <Link to="/mobile">Desarrollo móvil</Link> },
 ];
 
 export default function Layout({ children }) {
+  const [currentRoute, setCurrentRoute] = useState("overview");
   const {
     token: { colorBgContainer },
   } = theme.useToken();
+  const onClick = (e) => {
+    setCurrentRoute(e.key);
+  };
 
   return (
     <DefaultLayout>
@@ -25,8 +29,9 @@ export default function Layout({ children }) {
         <Menu
           theme="dark"
           mode="horizontal"
-          defaultSelectedKeys={["1"]}
+          selectedKeys={[currentRoute]}
           items={ITEMS}
+          onClick={onClick}
         />
       </Header>
       <Content>{children}</Content>
