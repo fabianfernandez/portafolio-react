@@ -1,12 +1,14 @@
 import { deleteRequest, getRequest, postRequest, putRequest } from "./api";
 
-export const getMessages = () => getRequest("http://127.0.0.1:8000/messages/");
+const apiUrl = process.env.REACT_APP_API_URL;
+
+export const getMessages = () => getRequest(`${apiUrl}messages/`);
 
 export const createMessage = (data) =>
-  postRequest("http://127.0.0.1:8000/messages/create/", data);
+  postRequest(`${apiUrl}messages/create/`, data);
 
 export const deleteMessage = (id) =>
-  deleteRequest(`http://127.0.0.1:8000/messages/delete/${id}/`);
+  deleteRequest(`${apiUrl}messages/delete/${id}/`);
 
 export const editMessage = (id, data) =>
-  putRequest(`http://127.0.0.1:8000/messages/update/${id}/`, data);
+  putRequest(`${apiUrl}messages/update/${id}/`, data);

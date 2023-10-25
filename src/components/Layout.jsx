@@ -6,7 +6,6 @@ const { Header, Content, Footer } = DefaultLayout;
 const ITEMS = [
   { key: "overview", label: <Link to="/">Resumen</Link> },
   { key: "web", label: <Link to="/web">Desarrollo web</Link> },
-  { key: "mobile", label: <Link to="/mobile">Desarrollo móvil</Link> },
 ];
 
 export default function Layout({ children }) {

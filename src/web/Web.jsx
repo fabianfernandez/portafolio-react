@@ -20,7 +20,7 @@ import {
 } from "../api/messages";
 import { EyeOutlined, EditOutlined, DeleteOutlined } from "@ant-design/icons";
 
-const { Title, Paragraph } = Typography;
+const { Title, Paragraph, Text } = Typography;
 
 export default function Web() {
   const [data, setData] = useState([]);
@@ -122,19 +122,47 @@ export default function Web() {
     </>
   );
   return (
-    <div style={{ margin: 20 }}>
-      <Card>
-        <Title>Conocimientos básicos</Title>
-        <Row gutter={[20, 20]}>
-          <Col span={12}>
+    <div
+      style={{
+        display: "flex",
+        margin: "20px 100px",
+        gap: "40px",
+        flexDirection: "column",
+      }}
+    >
+      <Card title={<Title level={3}>Conocimientos Front-End</Title>}>
+        <Row>
+          <Col style={{ margin: "40px auto", maxWidth: "700px" }}>
             <Paragraph>
-              Uno de los conocimientos más utilizados en el desarrollo de
-              software es la creación de un CRUD. A Continuación es posible ver
-              una Tabla en la cual se pueden agregar, leer, eliminar y editar
-              datos.
+              <Text strong>
+                La siguiente tabla es una aplicación de los siguientes
+                conceptos:
+              </Text>
+              <br />
+              <br />
+              <ul>
+                <li>
+                  Utilización de librerías de componentes pre-diseñados para la
+                  creación rápida de interfaces. En este caso se esta utilizando
+                  la librería ant-design, otros ejemplos serían bootstrap y
+                  material-ui.
+                </li>
+                <li>
+                  Conexión a una API REST la cual dispone de los recursos de
+                  creación, lectura, actualización y eliminación.
+                </li>
+                <li>
+                  Utilización de los conceptos de React como variables de
+                  estado, Hooks y renderizado condicional.
+                </li>
+              </ul>
             </Paragraph>
           </Col>
-          <Col span={12}>
+          <Col
+            style={{
+              margin: "auto",
+            }}
+          >
             {contextHolder}
             <div
               style={{
@@ -155,6 +183,30 @@ export default function Web() {
                 Crear Mensaje
               </Button>
             </div>
+          </Col>
+        </Row>
+      </Card>
+      <Card title={<Title level={3}>Conocimientos Back-End</Title>}>
+        <Row>
+          <Col style={{ margin: "40px auto", maxWidth: "700px" }}>
+            <Paragraph>
+              <Text strong>Conocimientos de django</Text>
+              <br />
+              <br />
+              <ul>
+                <li>
+                  Creación y configuración de un nuevo proyecto utilizando
+                  Django
+                </li>
+                <li>
+                  Creación y configuración de nuevas aplicaciones de django
+                </li>
+                <li>
+                  Configuración de rutas de los end-points asociados a los
+                  recursos
+                </li>
+              </ul>
+            </Paragraph>
           </Col>
         </Row>
       </Card>
